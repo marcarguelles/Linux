@@ -1,0 +1,32 @@
+Credits: https://www.computerworld.com/article/3144985/linux-hardening-a-15-step-checklist-for-a-secure-linux-server.html
+1) Documentar información de host: hostname, IP, Mac, fecha, Asset number, etc.
+2) BIOS: proteger via password + evitar boot desde dispositivos extraibles (usb/dvd/cd, etc). Solo se puede saltar esto quitando la pila de la bios.
+3) Cifrado de disco duro obligatorio (al instalar).
+4) Separar el sistema de ficheros por particiones (al instalar) + configurar backups de estas particiones de forma periódica... en casa, normalmente queremos /home, aunque el resto pueden ser útiles en caso de intrusión.
+5) Configurar iptables (ver fichero en este mismo git).
+6) Securizar /boot. Editar el fichero /etc/fstab añadiendo
+ LABEL=/boot   /boot  ext3  defaults,ro 1 2
+ (permisos: root/root. Si no es así --> #chown root:root /etc/fstab)
+7) Deshabilitar USB:
+ #vim /etc/modprobe.d/blacklist.conf --> añadir blacklist usb_storage
+ #vim /etc/rc.local --> añadir 2 líneas: modprobe -r usb_storage + exit 0
+8) Actualizar el sistema (apt-get update y apt-get upgrade)
+9) Revisar paquetes instalados via dpkg --list. Todo lo innecesario, se elimina.
+10) Revisar puertos abiertos (identificar conexiones abiertas extrañas). #netstat -antp
+11) Secure SSH. Si no lo necesitas, lo eliminas. Sino, lo securizas. Y revisa que /etc/ssh/sshd_config tenga user/group root/root (y permisos 600, cambiar con chmod).
+ Ejemplo: cambiar el puerto 22 por otro distinto; PermitRootLogin No; AllowUsers [noombre_usuarios_autorizados]; Protocol2; IgnoreRhosts to yes; HostbasedAuthentication no; PermitEmptyPasswords no; X11Forwarding no; MaxAuthTries 5; Ciphers aes128-ctr,aes192-ctr,aes256-ctr; ClientAliveInterval 900; ClientAliveCountMax 0; UsePAM yes; 
+12) Habilitar SELinux (permite soporte de access control via políticas de seguridad). /etc/selinux/config -> tres opciones (disabled; permissive; enforcing). Usar enforcing para más seguridad.
+13) Parámetros de red./etc/sysctl.conf
+ - deshabilitar IP forwarding: net.ipv4.ip_forward a 0
+ - deshabilitar send packet redirects net.ipv4.conf.default.send_redirects a 0
+ - deshabilitar ICMP redirect Acceptance net.ipv4.conf.default.accept_redirects parameters y net.ipv4.conf.all.accept_redirects a 0
+ - deshabilitar Bad Error Message Protection net.ipv4.icmp_ignore_bogus_error_responses parameter a 1
+14) Política de passwords. Ver PAM module (/etc/pam.d/common-password). 
+15) Permisos. Prácticamente todo en /etc tendría que estar en root/root.
+16) Restringir core dumps: 0 a /etc/security/limits.conf y fs.suid_dumpable = 0 en /etc/sysctl.conf
+17) Configurar Exec Shield: kernel.exec-shield = 1 a “/etc/sysctl.conf” 
+18) Randomized Virtual Memory Region Placement: kernel.randomize_va_space = 2 en “/etc/sysctl.conf”
+
+Credits https://www.cyberciti.biz/tips/linux-security.html
+
+19)
