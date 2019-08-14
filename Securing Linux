@@ -12,7 +12,7 @@ Credits: https://www.computerworld.com/article/3144985/linux-hardening-a-15-step
  #vim /etc/rc.local --> añadir 2 líneas: modprobe -r usb_storage + exit 0
 8) Actualizar el sistema (apt-get update y apt-get upgrade)
 9) Revisar paquetes instalados via dpkg --list. Todo lo innecesario, se elimina.
-10) Revisar puertos abiertos (identificar conexiones abiertas extrañas). #netstat -antp
+10) Revisar puertos abiertos (identificar conexiones abiertas extrañas). #netstat -antp (o -tulpn; o ss -tulpn; o nmap -sT -O localhost)
 11) Secure SSH. Si no lo necesitas, lo eliminas. Sino, lo securizas. Y revisa que /etc/ssh/sshd_config tenga user/group root/root (y permisos 600, cambiar con chmod).
  Ejemplo: cambiar el puerto 22 por otro distinto; PermitRootLogin No; AllowUsers [noombre_usuarios_autorizados]; Protocol2; IgnoreRhosts to yes; HostbasedAuthentication no; PermitEmptyPasswords no; X11Forwarding no; MaxAuthTries 5; Ciphers aes128-ctr,aes192-ctr,aes256-ctr; ClientAliveInterval 900; ClientAliveCountMax 0; UsePAM yes; 
 12) Habilitar SELinux (permite soporte de access control via políticas de seguridad). /etc/selinux/config -> tres opciones (disabled; permissive; enforcing). Usar enforcing para más seguridad.
@@ -21,7 +21,7 @@ Credits: https://www.computerworld.com/article/3144985/linux-hardening-a-15-step
  - deshabilitar send packet redirects net.ipv4.conf.default.send_redirects a 0
  - deshabilitar ICMP redirect Acceptance net.ipv4.conf.default.accept_redirects parameters y net.ipv4.conf.all.accept_redirects a 0
  - deshabilitar Bad Error Message Protection net.ipv4.icmp_ignore_bogus_error_responses parameter a 1
-14) Política de passwords. Ver PAM module (/etc/pam.d/common-password). 
+14) Política de passwords. Ver PAM module (/etc/pam.d/common-password). Caducidad, repetición, reusabilidad, bloqueo temporal de usuario en caso de fallo de autenticación, etc.
 15) Permisos. Prácticamente todo en /etc tendría que estar en root/root.
 16) Restringir core dumps: 0 a /etc/security/limits.conf y fs.suid_dumpable = 0 en /etc/sysctl.conf
 17) Configurar Exec Shield: kernel.exec-shield = 1 a “/etc/sysctl.conf” 
@@ -29,4 +29,7 @@ Credits: https://www.computerworld.com/article/3144985/linux-hardening-a-15-step
 
 Credits https://www.cyberciti.biz/tips/linux-security.html
 
-19)
+19) Cifrar todo el tráfico que sea posible (SSL, SSH, SFTP, etc). Así como las comunicaciones importantes. Usar gestor de passwords seguro. 
+20) Evita usar servicios inseguros (telnet, ftp, rlogin, rsh, etc). sudo apt-get --purge remove xinetd nis yp-tools tftpd atftpd tftpd-hpa telnetd rsh-server rsh-redone-server
+21) Mantener el sistema actualizado...
+22) (nos quedamos en 17)
