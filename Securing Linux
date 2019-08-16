@@ -7,13 +7,13 @@ Credits: https://www.computerworld.com/article/3144985/linux-hardening-a-15-step
 6) Securizar /boot. Editar el fichero /etc/fstab añadiendo
  LABEL=/boot   /boot  ext3  defaults,ro 1 2
  (permisos: root/root. Si no es así --> #chown root:root /etc/fstab)
-7) Deshabilitar USB:
- #vim /etc/modprobe.d/blacklist.conf --> añadir blacklist usb_storage
+7) Deshabilitar USB/firewire/thunderbolt:
+ #vim /etc/modprobe.d/blacklist.conf --> añadir blacklist usb_storage (también firewire y thunderbolt)
  #vim /etc/rc.local --> añadir 2 líneas: modprobe -r usb_storage + exit 0
 8) Actualizar el sistema (apt-get update y apt-get upgrade)
 9) Revisar paquetes instalados via dpkg --list. Todo lo innecesario, se elimina.
 10) Revisar puertos abiertos (identificar conexiones abiertas extrañas). #netstat -antp (o -tulpn; o ss -tulpn; o nmap -sT -O localhost)
-11) Secure SSH. Si no lo necesitas, lo eliminas. Sino, lo securizas. Y revisa que /etc/ssh/sshd_config tenga user/group root/root (y permisos 600, cambiar con chmod).
+11) Secure OpenSSH. Si no lo necesitas, lo eliminas. Sino, lo securizas. Y revisa que /etc/ssh/sshd_config tenga user/group root/root (y permisos 600, cambiar con chmod).
  Ejemplo: cambiar el puerto 22 por otro distinto; PermitRootLogin No; AllowUsers [noombre_usuarios_autorizados]; Protocol2; IgnoreRhosts to yes; HostbasedAuthentication no; PermitEmptyPasswords no; X11Forwarding no; MaxAuthTries 5; Ciphers aes128-ctr,aes192-ctr,aes256-ctr; ClientAliveInterval 900; ClientAliveCountMax 0; UsePAM yes; 
 12) Habilitar SELinux (permite soporte de access control via políticas de seguridad). /etc/selinux/config -> tres opciones (disabled; permissive; enforcing). Usar enforcing para más seguridad.
 13) Parámetros de red./etc/sysctl.conf
@@ -32,4 +32,35 @@ Credits https://www.cyberciti.biz/tips/linux-security.html
 19) Cifrar todo el tráfico que sea posible (SSL, SSH, SFTP, etc). Así como las comunicaciones importantes. Usar gestor de passwords seguro. 
 20) Evita usar servicios inseguros (telnet, ftp, rlogin, rsh, etc). sudo apt-get --purge remove xinetd nis yp-tools tftpd atftpd tftpd-hpa telnetd rsh-server rsh-redone-server
 21) Mantener el sistema actualizado...
-22) (nos quedamos en 17)
+22) Eliminiar el X Window System (en caso de servidores).
+23) Modificación de parámetros de Kernel. Mediante /etc/sysctl.conf. 
+24) Modificar las opcoines de las particiones.
+ - noexec: no permite ejecutar binarios (pero sí scripts).
+ - nodev: no permite dispositivos en esta partición (sda, device files zero, etc).
+ - nosuid: no permite acceso SUID/SGID en esta partición.
+25) Disk Quota. Para todos los usuarios. Modificando el fichero /etc/fstab. Mirar un tutorial específico para esto.
+26) Eliminar IPv6 (si no lo usas). En Debian: 
+ - #vim /etc/modprobe.d/aliases
+ - buscar línea alias net-pf-10 ipv6
+ - sustituir por las dos líneas siguientes: alias net-pf-10 off y alias ipv6 off
+27) Deshabilitar los binarios SUID y SGID que no necesitemos. Investigar cada fichero via man o lo que sea. Tpdos los ficheros con estos bits SUID/SGID pueden ser utilizados por un atacante si tienen problemas de seguridad o un bug.
+ - Ver todos los ficheros set user id: find / -perm /4000
+ - Ver todos los ficheros group id: find / -perm +/000
+28) Ficheros word-writable. Cualquiera puede modificar un fichero de este tipo, siendo un problema de seguridad. Establece los permisos de user/group correctos para los ficheros encontrados.
+ find / -xdev -type d \( -perm -0002 -a ! -perm -1000 \) -print
+29) Ficheros noowner, los que no tienen usuario o grupo. Revisar y establecer las asignaciones correctas.
+ find /dir -xdev \( -nouser -o -nogroup \) -print
+30) Usar un sistema centralizado de autenticación, es decir, no utilizar usuarios locales sino OpenLDAP, AD, etc. Esto en caso de centros con multiples servidores, etc.
+31) Kerberos: del "CIA Triad", permite authentication utilizando un secreto compartido cifrado, los paquetes a través de la red insegura están cifrados (remote login, remote copy, etc), por lo que los usuarios que se autentican via Kerberos están protegidos de usuarios que estén intentando obtener passwords monitorizando el tráfico.
+32) Logging y Auditing. Ir revisando /var/log para observar intentos de hacking o cracking, o ver software mal configurado (errores) que pueden suponer un riesgo de seguridad. Acostumbra a ser útil centralizar los logs de equipos remotos, o utilizar una herramienta GUI como el System Log Viewer.
+33) Herramienta para anomalias en logs: logwatch / logcheck.
+34) System accounting via autidtid. En startup, las reglas en /etc/audit.rules se leen por el daemon. Se pueden obtener datos del tipo de eventos, fechas, usuarios responsables del evento, tipo, exito o fracaso, eventos de modificación de fecha o tiempo, eventos de modificación de usuario/grupo, etc.
+35) Instalar un IDS (fail2ban/denyhost). Si es posible, software AIDE antes que el sistema se conecte a tu red (HIDS). Valorar también install de rkhunter root kit detector (quizás lo mejor es hacerlo correr desde una live CD).
+36) Deshabilitar servicios no utilizados. 
+ - sudo systemctl -> ver servicios
+ - sudo systemctl stop service -> parar 
+ - sudo systemctl disable service -> parar 
+37) Securizar servicios clásicos (apache, php, nginx)... Al realizar cambios reiniciar via sudo systemctl restart apache2.service, o sudo systemctl restart httpd.service, etc.
+38) Usar programas de cifrado para proteger ficheros de passwords (comando gpg, keepass, etc).
+39) Backups: En Debian para snapshots puedes usar rsnapchot (incremental).
+40) Buscar rootkits, habilitar protección de buffer overflow, suscribirse a la Debian Linux Security mailing list, etc.
