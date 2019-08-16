@@ -1,3 +1,5 @@
+Otras fuentes: manual "securing Debian".
+
 Credits: https://www.computerworld.com/article/3144985/linux-hardening-a-15-step-checklist-for-a-secure-linux-server.html
 1) Documentar información de host: hostname, IP, Mac, fecha, Asset number, etc.
 2) BIOS: proteger via password + evitar boot desde dispositivos extraibles (usb/dvd/cd, etc). Solo se puede saltar esto quitando la pila de la bios.
