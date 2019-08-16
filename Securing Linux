@@ -12,7 +12,7 @@ Credits: https://www.computerworld.com/article/3144985/linux-hardening-a-15-step
 7) Deshabilitar USB/firewire/thunderbolt:
  #vim /etc/modprobe.d/blacklist.conf --> añadir blacklist usb_storage (también firewire y thunderbolt)
  #vim /etc/rc.local --> añadir 2 líneas: modprobe -r usb_storage + exit 0
-8) Actualizar el sistema (apt-get update y apt-get upgrade)
+8) Actualizar el sistema (apt-get update y apt-get upgrade). Revisar antes los repositorios
 9) Revisar paquetes instalados via dpkg --list. Todo lo innecesario, se elimina.
 10) Revisar puertos abiertos (identificar conexiones abiertas extrañas). #netstat -antp (o -tulpn; o ss -tulpn; o nmap -sT -O localhost)
 11) Secure OpenSSH. Si no lo necesitas, lo eliminas. Sino, lo securizas. Y revisa que /etc/ssh/sshd_config tenga user/group root/root (y permisos 600, cambiar con chmod).
