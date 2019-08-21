@@ -1,24 +1,25 @@
 Otras fuentes: manual "securing Debian".
 
 Credits: https://www.computerworld.com/article/3144985/linux-hardening-a-15-step-checklist-for-a-secure-linux-server.html
-1) Documentar información de host: hostname, IP, Mac, fecha, Asset number, etc.
-2) BIOS: proteger via password + evitar boot desde dispositivos extraibles (usb/dvd/cd, etc). Solo se puede saltar esto quitando la pila de la bios.
-3) Cifrado de disco duro obligatorio (al instalar).
+1) Documentar información de host: hostname, IP, Mac, fecha, Asset number, /etc/fstab, free -h, df -h, etc.
+2) BIOS: proteger via password + evitar boot desde dispositivos extraibles (usb/dvd/cd, etc). Solo se puede saltar esto quitando la pila de la bios o jugando con los "jumpers".
+3) Cifrado de disco duro, como mínimo de la partición de /home y /swap. Cifrar los datos personales en memórias extraibles (USB, HD portable, etc).
 4) Separar el sistema de ficheros por particiones (al instalar) + configurar backups de estas particiones de forma periódica... en casa, normalmente queremos /home, aunque el resto pueden ser útiles en caso de intrusión.
 5) Configurar iptables (ver fichero en este mismo git).
 6) Securizar /boot. Editar el fichero /etc/fstab añadiendo
- LABEL=/boot   /boot  ext3  defaults,ro 1 2
+ LABEL=/boot   /boot  ext3  defaults,ro 0 2
  (permisos: root/root. Si no es así --> #chown root:root /etc/fstab)
+ A considerar que a veces tendremos que eliminar el parámetro "ro" para realizar actualizaciones.
 7) Deshabilitar USB/firewire/thunderbolt:
  #vim /etc/modprobe.d/blacklist.conf --> añadir blacklist usb_storage (también firewire y thunderbolt)
  #vim /etc/rc.local --> añadir 2 líneas: modprobe -r usb_storage + exit 0
 8) Actualizar el sistema (apt-get update y apt-get upgrade). Revisar antes los repositorios
 9) Revisar paquetes instalados via dpkg --list. Todo lo innecesario, se elimina.
-10) Revisar puertos abiertos (identificar conexiones abiertas extrañas). #netstat -antp (o -tulpn; o ss -tulpn; o nmap -sT -O localhost)
+10) Revisar puertos abiertos (identificar conexiones abiertas extrañas). #netstat -antp (o -tulpn; o ss -tulpn; o nmap -sT -O localhost). Capturar paquetes via tcpdump o wireshark del equipo en reposo.
 11) Secure OpenSSH. Si no lo necesitas, lo eliminas. Sino, lo securizas. Y revisa que /etc/ssh/sshd_config tenga user/group root/root (y permisos 600, cambiar con chmod).
  Ejemplo: cambiar el puerto 22 por otro distinto; PermitRootLogin No; AllowUsers [noombre_usuarios_autorizados]; Protocol2; IgnoreRhosts to yes; HostbasedAuthentication no; PermitEmptyPasswords no; X11Forwarding no; MaxAuthTries 5; Ciphers aes128-ctr,aes192-ctr,aes256-ctr; ClientAliveInterval 900; ClientAliveCountMax 0; UsePAM yes; 
 12) Habilitar SELinux (permite soporte de access control via políticas de seguridad). /etc/selinux/config -> tres opciones (disabled; permissive; enforcing). Usar enforcing para más seguridad.
-13) Parámetros de red./etc/sysctl.conf
+13) Modificación de parámetros de Kernel. Parámetros de red./etc/sysctl.conf
  - deshabilitar IP forwarding: net.ipv4.ip_forward a 0
  - deshabilitar send packet redirects net.ipv4.conf.default.send_redirects a 0
  - deshabilitar ICMP redirect Acceptance net.ipv4.conf.default.accept_redirects parameters y net.ipv4.conf.all.accept_redirects a 0
@@ -28,18 +29,19 @@ Credits: https://www.computerworld.com/article/3144985/linux-hardening-a-15-step
 16) Restringir core dumps: 0 a /etc/security/limits.conf y fs.suid_dumpable = 0 en /etc/sysctl.conf
 17) Configurar Exec Shield: kernel.exec-shield = 1 a “/etc/sysctl.conf” 
 18) Randomized Virtual Memory Region Placement: kernel.randomize_va_space = 2 en “/etc/sysctl.conf”
+19) Proteger GRUB o LILO (password para que no se modifiquen los parámetros del kernel, etc).
 
 Credits https://www.cyberciti.biz/tips/linux-security.html
 
 19) Cifrar todo el tráfico que sea posible (SSL, SSH, SFTP, etc). Así como las comunicaciones importantes. Usar gestor de passwords seguro. 
 20) Evita usar servicios inseguros (telnet, ftp, rlogin, rsh, etc). sudo apt-get --purge remove xinetd nis yp-tools tftpd atftpd tftpd-hpa telnetd rsh-server rsh-redone-server
-21) Mantener el sistema actualizado...
+21) Mantener el sistema actualizado.
 22) Eliminiar el X Window System (en caso de servidores).
-23) Modificación de parámetros de Kernel. Mediante /etc/sysctl.conf. 
-24) Modificar las opcoines de las particiones.
+23) Modificar las opciones de las particiones.
  - noexec: no permite ejecutar binarios (pero sí scripts).
  - nodev: no permite dispositivos en esta partición (sda, device files zero, etc).
  - nosuid: no permite acceso SUID/SGID en esta partición.
+ - ro: read-only.
 25) Disk Quota. Para todos los usuarios. Modificando el fichero /etc/fstab. Mirar un tutorial específico para esto.
 26) Eliminar IPv6 (si no lo usas). En Debian: 
  - #vim /etc/modprobe.d/aliases
