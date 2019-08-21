@@ -1,0 +1,6 @@
+$uname -ra --> Linux parrot 4.19.28
+
+-1- System
+* Control Center: configurar todos los parámetros básicos del sistema (impresoras, Lock & Feel, Time, keyboard, mouse, power management, sound, aplicaciones por defecto, users and groups, etc).
+* Lock Screen, Log Out, Shut down.
+* El resto de elementos son enlaces a elementos del Control Center.
