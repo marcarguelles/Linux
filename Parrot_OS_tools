@@ -1,10 +1,19 @@
 $uname -ra --> Linux parrot 4.19.28
+[!] Aplicación de uso habitual o especialmente interesante.
 
 -1- System
-* Control Center: configurar todos los parámetros básicos del sistema (impresoras, red, Lock & Feel, Time, keyboard y locales, mouse, power management, sound, aplicaciones por defecto, users and groups, etc).
+* [!] Control Center: configurar todos los parámetros básicos del sistema (impresoras, red, Lock & Feel, Time, keyboard y locales, mouse, power management, sound, aplicaciones por defecto, users and groups, etc).
   Útil para hacer aparecer el cubo de basura (Mate tweak), cambiar apariencia, quitar salvapantallas, modificar el locale a tu modelo de teclado, power management, etc.
-* Lock Screen, Log Out, Shut down.
+* [!] Lock Screen, Log Out, Shut down.
 * El resto de elementos son enlaces a elementos del Control Center.
 
 -2- Places
 Muy útil para acceder direcamente a directorios (descargas, red, etc) y configurar directorios remotos via 'Connect to Server...'. 
+
+-3- Applications
+-3.1- Accessories
+* Compton: "A X Composer". Compositor para Xorg. Puedes eliminarlo de este menú, ya que no es un ejecutable normal y el enlace tampoco hace nada.
+* Engrampa Archive Manager: Archive Manager oficial de MATE, permite abrir, modificar o crear ficheros en extensiones de todo tipo (7z, tar.gz, zip, etc). Permite comandos via terminal, o uso directo via botón derecho en MATE, aunque a diferencia de este no parece que permita cifrado.
+* [!]GPA: Gnu Privacy Asistant - key manager. Puedes crear, importar o editar (passw, expirity date, etc) claves privadas. Generar una pública a partir de la privada, distribuirla al servidor público de gnupg.net, realizar un backup de la privada. 
+  Con el botón de File Manager, puedes seleccionar ficheros para firmarlos o validar su firma, cifrar o descifrar ficheros.
+
