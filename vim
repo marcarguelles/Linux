@@ -1,6 +1,6 @@
 Vim
 ===
-Import de la wiki, 2019-04-25
+# Import de la wiki, 2019-08-21
 
 Ayuda: :help
 Ventanas múltiples: :split / :split text.txt / Ctrl-w-w (salta de ventana) / Ctrl-W j (sube) / Ctrl-W k (baja) / :q per tancar.
