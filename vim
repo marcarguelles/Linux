@@ -11,6 +11,7 @@ Eliminar tabulación: = G=gg (todo el documento)
 Autocompletar palabras: Ctrl-n o Ctrl-n (si ya existen en el fichero)
 Línea en minúsculas: guu
 Línea en mayusculas: gUU
+Mostrar carácteres no imprimibles: set list / set nolist
 
 Reemplazar todo: :%s/foo/bar/g (string foo por bar) ( IPs antes de pegar en un Excel: :%s/\./\_/g )
 Reemplazar solo linea: :s/foo/bar/g
@@ -25,6 +26,8 @@ Insertar al final de la línea: A
 Insertar a la línea siguiente: o
 Borrar carácter debajo cursor: x
 Borrar: d (w: palabra; d: línea)
+Borrar líneas vacías: :g/^$/d
+Borrar líneas que contengan un patrón string: :g/----/d
 Copiar: y (w: palabra; y: línea)
 Cortar: c (w: palabra; c: línea)
 Pegar: p
