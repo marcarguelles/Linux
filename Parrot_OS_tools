@@ -1,6 +1,10 @@
 $uname -ra --> Linux parrot 4.19.28
 
 -1- System
-* Control Center: configurar todos los parámetros básicos del sistema (impresoras, Lock & Feel, Time, keyboard, mouse, power management, sound, aplicaciones por defecto, users and groups, etc).
+* Control Center: configurar todos los parámetros básicos del sistema (impresoras, red, Lock & Feel, Time, keyboard y locales, mouse, power management, sound, aplicaciones por defecto, users and groups, etc).
+  Útil para hacer aparecer el cubo de basura (Mate tweak), cambiar apariencia, quitar salvapantallas, modificar el locale a tu modelo de teclado, power management, etc.
 * Lock Screen, Log Out, Shut down.
 * El resto de elementos son enlaces a elementos del Control Center.
+
+-2- Places
+Muy útil para acceder direcamente a directorios (descargas, red, etc) y configurar directorios remotos via 'Connect to Server...'. 
