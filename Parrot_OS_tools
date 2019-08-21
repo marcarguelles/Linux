@@ -22,4 +22,12 @@ Muy útil para acceder direcamente a directorios (descargas, red, etc) y configu
   Por el paso 3), el manager ocupa toda la pantalla y no se puede seguir trabajando sin cerrarlo.
   El fichero tiene que contener un texto largo, y no debe ser modificado nunca (read-only), usarlo siempre como segundo factor, generar siempre un fichero de backup y nunca guardarlo en el mismo sitio que la database (otro directorio, disco, usb, etc).
   No guardar el fichero de password 2FA en el mismo equipo que la database (usar un usb extraible que no contenga la DB, o que contenga la DB cifrada con otro protocolo seguro). 
-  
+* Mate Calculator: Calculadora con modo básico, científico, financiero y programación (cálculos binários, hex, etc).
+* Mate Font viewer: programa simple que permite visualizar todas las fuentes del sistema.
+* Mate Search Tool: Útil frontend gráfico del comando [find] si no recuerdas como funciona por parámetros. Opciones de filtro por fecha de modificación, tipo, tamaño, etc.
+* Midnight Commander: Editor de ficheros de tipo clásico, es decir, por consola. Teniendo vim lo encuentro redundante.
+* Pluma text editor: editor de texto similar a notepad, con algunas funcionalidades más (revisor de ortografia, etc). 
+* [!] QOwnNotes: Editor de notas, útil para apuntar temas pendientes, apuntes importantes, etc. Cuando creas una nota, automáticamente se nombra con la fecha. Más para el mundo laboral. Múltiples funcionalidades,
+  incluso subir la información al Cloud, añadir imágenes, cifrar notas individuales, clasificación por directorios via TAGs, scripting, versiones de las notas.
+  Usa sqlite database. Se puede subir a GIT. En Parrot OS, asegurate de deshabilitar la funcionalidad de "tracking" y "heartbeat", no tendría mucho sentido en esta distro!
+* Redshift: 
