@@ -16,4 +16,10 @@ Muy útil para acceder direcamente a directorios (descargas, red, etc) y configu
 * Engrampa Archive Manager: Archive Manager oficial de MATE, permite abrir, modificar o crear ficheros en extensiones de todo tipo (7z, tar.gz, zip, etc). Permite comandos via terminal, o uso directo via botón derecho en MATE, aunque a diferencia de este no parece que permita cifrado.
 * [!]GPA: Gnu Privacy Asistant - key manager. Puedes crear, importar o editar (passw, expirity date, etc) claves privadas. Generar una pública a partir de la privada, distribuirla al servidor público de gnupg.net, realizar un backup de la privada. 
   Con el botón de File Manager, puedes seleccionar ficheros para firmarlos o validar su firma, cifrar o descifrar ficheros.
-
+* [!]KeePassXC: Manager de contraseñas. Crear una nueva BBDD y introduces todas tus credenciales allí. Para acceder a ella puedes introducir un password, un fichero de clave y una pregunta. Puedes modificar el tipo de cifrado en opciones (se recomienda Argon2). 
+  Hoy en dia se recomienda usar gestores de passwords, es una forma cómoda y relativamente segura de mantener todos tus passwords actualizados.
+  Seguridad en Managers de passwords: 1) master password seguro; 2) doble factor de autenticación; 3) terminar el proceso del programa cuando ya no se use (si un atacante accede a la RAM puede obtener el master password en claro).
+  Por el paso 3), el manager ocupa toda la pantalla y no se puede seguir trabajando sin cerrarlo.
+  El fichero tiene que contener un texto largo, y no debe ser modificado nunca (read-only), usarlo siempre como segundo factor, generar siempre un fichero de backup y nunca guardarlo en el mismo sitio que la database (otro directorio, disco, usb, etc).
+  No guardar el fichero de password 2FA en el mismo equipo que la database (usar un usb extraible que no contenga la DB, o que contenga la DB cifrada con otro protocolo seguro). 
+  
