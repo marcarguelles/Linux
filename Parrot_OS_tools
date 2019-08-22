@@ -30,4 +30,7 @@ Muy útil para acceder direcamente a directorios (descargas, red, etc) y configu
 * [!] QOwnNotes: Editor de notas, útil para apuntar temas pendientes, apuntes importantes, etc. Cuando creas una nota, automáticamente se nombra con la fecha. Más para el mundo laboral. Múltiples funcionalidades,
   incluso subir la información al Cloud, añadir imágenes, cifrar notas individuales, clasificación por directorios via TAGs, scripting, versiones de las notas.
   Usa sqlite database. Se puede subir a GIT. En Parrot OS, asegurate de deshabilitar la funcionalidad de "tracking" y "heartbeat", no tendría mucho sentido en esta distro!
-* Redshift: 
+* Redshift: ajusta el color de la pantalla segun la posición del sol para hacer que sea más natural para el cerebro y evitar problemas de sueño.  
+* RTLSDR Scanner: Analizador de espectros para dongles RTLSDR. Podemos conectar un sensor USB al portátil y podremos obtener la gráfica de potencia por frecuencias. Podemos habilitar GPS y así obtener un mapa de poténcia. Ejemplo: realizar test mientras conducimos para realizar un mapa de poténcias para la cobertura de la señal que queramos monitorizar;
+  obtener poténcia de una antena de TV a la entrada de casa, etc. Muchas veces se realizan proyectos similares con arduinos, raspberry, etc.
+* 
