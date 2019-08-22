@@ -22,7 +22,7 @@ Muy útil para acceder direcamente a directorios (descargas, red, etc) y configu
   Por el paso 3), el manager ocupa toda la pantalla y no se puede seguir trabajando sin cerrarlo.
   El fichero tiene que contener un texto largo, y no debe ser modificado nunca (read-only), usarlo siempre como segundo factor, generar siempre un fichero de backup y nunca guardarlo en el mismo sitio que la database (otro directorio, disco, usb, etc).
   No guardar el fichero de password 2FA en el mismo equipo que la database (usar un usb extraible que no contenga la DB, o que contenga la DB cifrada con otro protocolo seguro). 
-* Mate Calculator: Calculadora con modo básico, científico, financiero y programación (cálculos binários, hex, etc).
+* [!] Mate Calculator: Calculadora con modo básico, científico, financiero y programación (cálculos binários, hex, etc).
 * Mate Font viewer: programa simple que permite visualizar todas las fuentes del sistema.
 * Mate Search Tool: Útil frontend gráfico del comando [find] si no recuerdas como funciona por parámetros. Opciones de filtro por fecha de modificación, tipo, tamaño, etc.
 * Midnight Commander: Editor de ficheros de tipo clásico, es decir, por consola. Teniendo vim lo encuentro redundante.
@@ -31,9 +31,10 @@ Muy útil para acceder direcamente a directorios (descargas, red, etc) y configu
   incluso subir la información al Cloud, añadir imágenes, cifrar notas individuales, clasificación por directorios via TAGs, scripting, versiones de las notas.
   Usa sqlite database. Se puede subir a GIT. En Parrot OS, asegurate de deshabilitar la funcionalidad de "tracking" y "heartbeat", no tendría mucho sentido en esta distro!
 * Redshift: ajusta el color de la pantalla segun la posición del sol para hacer que sea más natural para el cerebro y evitar problemas de sueño.  
-* RTLSDR Scanner: Analizador de espectros para dongles RTLSDR. Podemos conectar un sensor RTLSDR USB al portátil y podremos obtener la gráfica de potencia por frecuencias. Podemos habilitar GPS y así obtener un mapa de poténcia. 
+* [!] RTLSDR Scanner: Analizador de espectros para dongles RTLSDR. Podemos conectar un sensor RTLSDR USB al portátil y podremos obtener la gráfica de potencia por frecuencias. Podemos habilitar GPS y así obtener un mapa de poténcia. 
   Estos dispositivos permiten escuchar las señales electromagnéticos en rangos frecuenciales amplios, connectando el dispositivo por USB y un connector para la antena (tipo SMA female).
   Ejemplo: realizar test mientras conducimos para realizar un mapa de poténcias para la cobertura de la señal que queramos monitorizar;
   obtener poténcia de una antena de TV a la entrada de casa, etc. Muchas veces se realizan proyectos similares con arduinos, raspberry, etc.
   Es importante tener en mente las frecuencias a las que trabajan los distintos servicios, consultar gráfica de frecuencias y radio spectrum.
-* 
+* [!] SiriKali: permite crear volumenes (directorios) cifrados. Doble factor de autenticación disponible. Permite configurar permisos (rw, etc).
+  Al crear el volumen, recuerda en añadirlo a favoritos, ya que al desmontarse se borran los parámetros de configuración. 
