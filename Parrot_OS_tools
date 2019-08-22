@@ -11,6 +11,7 @@ $uname -ra --> Linux parrot 4.19.28
 Muy útil para acceder direcamente a directorios (descargas, red, etc) y configurar directorios remotos via 'Connect to Server...'. 
 
 -3- Applications
+
 -3.1- Accessories
 * Compton: "A X Composer". Compositor para Xorg. Puedes eliminarlo de este menú, ya que no es un ejecutable normal y el enlace tampoco hace nada.
 * Engrampa Archive Manager: Archive Manager oficial de MATE, permite abrir, modificar o crear ficheros en extensiones de todo tipo (7z, tar.gz, zip, etc). Permite comandos via terminal, o uso directo via botón derecho en MATE, aunque a diferencia de este no parece que permita cifrado.
@@ -37,4 +38,16 @@ Muy útil para acceder direcamente a directorios (descargas, red, etc) y configu
   obtener poténcia de una antena de TV a la entrada de casa, etc. Muchas veces se realizan proyectos similares con arduinos, raspberry, etc.
   Es importante tener en mente las frecuencias a las que trabajan los distintos servicios, consultar gráfica de frecuencias y radio spectrum.
 * [!] SiriKali: permite crear volumenes (directorios) cifrados. Doble factor de autenticación disponible. Permite configurar permisos (rw, etc).
-  Al crear el volumen, recuerda en añadirlo a favoritos, ya que al desmontarse se borran los parámetros de configuración. 
+  Al crear el volumen, recuerda en añadirlo a favoritos, ya que al desmontarse se borran los parámetros de configuración. El volumen se monta en ~/.SiriKali/.
+* [!] Take Screenshot: captura de pantalla. Te permite algunas opciones básicas (seleccionar area, capturar pantalla actual ->también se puede hacer con Alt+Impr Pant). 
+* [!] Vim: el editor de texto en consola más utilizado, extremadamente potente si se usa al 100% de su potencial (lo que no es fácil). En ParrotOS, modificar parámetros via fichero
+  ubicado en /home/.vimrc (i.e. set nolist para que no aparezcan caracteres no-imprimibles por pantalla).
+* [!] VSCodium: Edición de código. Fork de Visual Studio Code (para Windows). Utilidades habituales como debug, inspección de código para avisar de errores, ejecución, etc. 
+  Las extensiones por defecto reconocen una gran cantidad de lenguajes. Útil para proyectos largos, muy configurable.
+  
+-3.2- Anon Surf
+* Anonsurf [Start/Stop]:
+* change exit node: 
+* check ip:
+* Set/Unset OpenNIC DNS service: 
+
