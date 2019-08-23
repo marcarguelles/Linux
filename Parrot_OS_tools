@@ -86,7 +86,7 @@ Muy útil para acceder direcamente a directorios (descargas, red, etc) y configu
  * [!] Onion Circuits: Monitoriza circuitos tor, así como sus conexiones. 
  * [!] OnionShare: permite compartir ficheros a través de tor.
  * [!] qBittorrent: Cliente de torrent. 
- * Remmina: 
+ * Remmina: cliente RDP, VNC y SSH. Permite exportar configuración y guardar conexiones.
  * Remote Desktop Viewer: 
  * Revolt: 
  * Ricochet IM: 
