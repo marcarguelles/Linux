@@ -77,10 +77,10 @@ Muy útil para acceder direcamente a directorios (descargas, red, etc) y configu
  * Shotwell: Organizador de fotos. Puedes connectar una cámara o dispositivo via USB y importar las imágenes para luego organizarlas / modificarlas.
  
  -3.7- Internet
- * Claws Mail:
- * Electrum Bitcoin Wallet: 
- * Firefox
- * Firefox Profile Manager: 
+ * Claws Mail: Cliente de correo electrónico. Útil si tienes muchas cuentas a la vez.
+ * Electrum Bitcoin Wallet: billetera para Bitcoin. Puedes crear tu billetera y gestionarla (pagar, recibir, etc). Puedes recuperar tu cuenta con 12 palabras guardadas.
+ * [!] Firefox: Navegador. 
+ * Firefox Profile Manager: Permite gestionar el perfil de firefox. 
  * Gqrx: 
  * HexChat: 
  * Onion Circuits: 
