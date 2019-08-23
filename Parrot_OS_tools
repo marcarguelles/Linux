@@ -46,9 +46,14 @@ Muy útil para acceder direcamente a directorios (descargas, red, etc) y configu
   Las extensiones por defecto reconocen una gran cantidad de lenguajes. Útil para proyectos largos, muy configurable.
   
 -3.2- Anon Surf
-* Anonsurf [Start/Stop]:
-* change exit node: realiza cambios en el circuito de Tor. Al ejecutar por terminal hay varias opciones [start] para iniciar, [stop] para salir del modo anónimo, [restart] para realizar stop y start,
+* [!] Anonsurf [Start/Stop]: Automatiza el proceso de anonimato. Tiene las mismas limitaciones que Tor (e.g.: si te validas ya saben quien eres, etc).
+* [!] change exit node: realiza cambios en el circuito de Tor. Ir cambiando la IP a medida que vas trabajando es una MUY buena idea.
+* [!] check ip: como opción [myip].
+* [!] Set/Unset OpenNIC DNS service: como opción [dns].
+* Al ejecutar por terminal hay varias opciones [start] para iniciar, [stop] para salir del modo anónimo, [restart] para realizar stop y start,
   [changeid] reinicia tor para cambiar nuestra identidad, [status] indica si esta funcionando correctamente [myip] muestra IP y valida el estado de la conexión tor [dns] sustituye tus dns por los de OpenNIC (alternativa a los de ICANN).
-* check ip: como opción [myip].
-* Set/Unset OpenNIC DNS service: como opción [dns].
+  Tareas que realiza anonsurf: 1) mata aplicaciones "peligrosas" y limpia cachés 2) Inicia Tor; 3) mata servicios resolvconf, dnsmasq 4) modifica resolv.con para usar los DNS de ParrotDNS y OpenNIC
+  5) se asegura de deshabilitar ipv6 6) configura IPtables para enrutar todo el tráfico por tor (DNS incluido).
+  Cuando se salga del estado anónimo, se tiene que intentar revisar que Iptables haya regresado al estado habitual.
 
+ 
