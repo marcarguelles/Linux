@@ -56,4 +56,24 @@ Muy útil para acceder direcamente a directorios (descargas, red, etc) y configu
   5) se asegura de deshabilitar ipv6 6) configura IPtables para enrutar todo el tráfico por tor (DNS incluido).
   Cuando se salga del estado anónimo, se tiene que intentar revisar que Iptables haya regresado al estado habitual.
 
+ -3.3- Cryptography
+ * [!] GPA: comentado anteriormente.
+ * [!] SiriKali: comentado anteriormente.
+ * [!] zuluCrypt: Similar a SiriKali. Usa ficheros y no directorios para cifrar, lo que implica tener que especificar el tamaño.
+ * [!] zuluMount: Va junto zuluCrypt, permite ver particiones y ficheros cifrados, para montarlos. Se puede hacer todo con zuluCrypt, así que hasta cierto punto es redundante. 
+ SiriKali y zuluCrypt estan mantenidas por el mismo autor. Por facilidad de uso y no tener que especificar espacio a la hora de crear la partición, seguramente es mejor usar Sirikali.
+ 
+ -3.4- Education (menú eliminable)
+ * LibreOffice Math: editor de formulas de LibreOffice. Redundante con el apartado "Office".
+ 
+ -3.5- Games (menú eliminable)
+ * Xboard: ajedrez. 
+ 
+ -3.6- Graphics
+ * Eye of MATE Image Viewer: 
+ * GNU Image Manipulator Program: 
+ * LibreOffice Draw: 
+ * MATE Color Selection: 
+ * Shotwell: 
+ 
  
