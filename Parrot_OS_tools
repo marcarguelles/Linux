@@ -47,7 +47,8 @@ Muy útil para acceder direcamente a directorios (descargas, red, etc) y configu
   
 -3.2- Anon Surf
 * Anonsurf [Start/Stop]:
-* change exit node: 
-* check ip:
-* Set/Unset OpenNIC DNS service: 
+* change exit node: realiza cambios en el circuito de Tor. Al ejecutar por terminal hay varias opciones [start] para iniciar, [stop] para salir del modo anónimo, [restart] para realizar stop y start,
+  [changeid] reinicia tor para cambiar nuestra identidad, [status] indica si esta funcionando correctamente [myip] muestra IP y valida el estado de la conexión tor [dns] sustituye tus dns por los de OpenNIC (alternativa a los de ICANN).
+* check ip: como opción [myip].
+* Set/Unset OpenNIC DNS service: como opción [dns].
 
