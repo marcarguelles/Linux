@@ -70,10 +70,11 @@ Muy útil para acceder direcamente a directorios (descargas, red, etc) y configu
  * Xboard: ajedrez. 
  
  -3.6- Graphics
- * Eye of MATE Image Viewer: 
- * GNU Image Manipulator Program: 
- * LibreOffice Draw: 
- * MATE Color Selection: 
- * Shotwell: 
+ * Eye of MATE Image Viewer: visualizar imágenes y rotarlas.
+ * [!] GNU Image Manipulator Program: GIMP. Editor de imágenes extremadamente potente.
+ * [!] LibreOffice Draw: editor de imágenes de LibreOffice.
+ * MATE Color Selection: Selector de colores, básicamente para obtener el código RGB de un color.
+ * Shotwell: Organizador de fotos. Puedes connectar una cámara o dispositivo via USB y importar las imágenes para luego organizarlas / modificarlas.
+ 
  
  
