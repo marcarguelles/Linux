@@ -95,3 +95,22 @@ Muy útil para acceder direcamente a directorios (descargas, red, etc) y configu
  * [!] Tor Browser: Cliente Tor. Para más seguridad, utiliza Anonsurf antes de abrir el cliente Tor.
  * [!] Tor Browser Launcher Settings: configuración de Tor.
  * [!] XSSer: Mal clasificado, tendria que estar bajo las herramientas de Parrot. Framework para 1) detectar, 2) explotar y 3) reportar vulnerabilidades XSS en aplicaciones basadas en web (web-based app).
+
+ -3.8- Office
+ * Atril Document Viewer: Visualizador de documentos en múltiples formatos (pdf, ps, eps, djvu, etc). Permite buscar, copiar, navegación, etc.
+ * HomeBank: Software de finanzas y contabilidad personal. Permite crear cuentas, realizar gráficos, apuntar transacciones, reports, etc. 
+ * KeepNote: Aplicación para tomar notas. 
+ * LibreOffice: 
+ * LibreOffice Base: 
+ * LibreOffice Calc: 
+ * LibreOffice Draw: 
+ * LibreOffice Impress: 
+ * LibreOffice Math: 
+ * LibreOffice Writer: 
+ * MATE Dictionary: 
+ * Planner: 
+
+ 
+ 
+ 
+ 
