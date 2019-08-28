@@ -87,11 +87,11 @@ Muy útil para acceder direcamente a directorios (descargas, red, etc) y configu
  * [!] OnionShare: permite compartir ficheros a través de tor.
  * [!] qBittorrent: Cliente de torrent. 
  * Remmina: cliente RDP, VNC y SSH. Permite exportar configuración y guardar conexiones.
- * Remote Desktop Viewer: 
- * Revolt: 
- * Ricochet IM: 
- * SSL/SSH VNC Viewer: 
- * Thunderbird: 
- * Tor Browser: 
- * Tor Browser Launcher Settings: 
- * XSSer: 
+ * Remote Desktop Viewer: Conexiones RDP. Directas y inversas. Permite guardar sesiones. 
+ * Revolt: Cliente de chat para la red de Matrix (mensajeria, cifrado E2E, VoIP, etc).
+ * Ricochet IM: Mensajeria instantánia anónima. Permite utilizar la red Tor.
+ * SSL/SSH VNC Viewer: Acceso via VNC a otros dispositivos. 
+ * Thunderbird: Cliente de correo clásico. 
+ * [!] Tor Browser: Cliente Tor. Para más seguridad, utiliza Anonsurf antes de abrir el cliente Tor.
+ * [!] Tor Browser Launcher Settings: configuración de Tor.
+ * [!] XSSer: Mal clasificado, tendria que estar bajo las herramientas de Parrot. Framework para 1) detectar, 2) explotar y 3) reportar vulnerabilidades XSS en aplicaciones basadas en web (web-based app).
