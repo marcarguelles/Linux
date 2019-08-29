@@ -100,17 +100,29 @@ Muy útil para acceder direcamente a directorios (descargas, red, etc) y configu
  * Atril Document Viewer: Visualizador de documentos en múltiples formatos (pdf, ps, eps, djvu, etc). Permite buscar, copiar, navegación, etc.
  * HomeBank: Software de finanzas y contabilidad personal. Permite crear cuentas, realizar gráficos, apuntar transacciones, reports, etc. 
  * KeepNote: Aplicación para tomar notas. 
- * LibreOffice: 
- * LibreOffice Base: 
- * LibreOffice Calc: 
- * LibreOffice Draw: 
- * LibreOffice Impress: 
- * LibreOffice Math: 
- * LibreOffice Writer: 
- * MATE Dictionary: 
- * Planner: 
+ * LibreOffice: paquete de ofimática.
+ * LibreOffice Base: Editor de bases de datos.
+ * LibreOffice Calc: Hoja de cálculo.
+ * LibreOffice Draw: Editor de imágenes.
+ * LibreOffice Impress: Editor de slides para presentaciones.
+ * LibreOffice Math: Editor de fórmulas.
+ * LibreOffice Writer: Editor de texto.
+ * MATE Dictionary: busca definiciones de palabras online.
+ * Planner: Editor de proyectos (Gantt, etc).
 
- 
+ -3.9- Programming
+ * Cutter:
+ * DBeaver Community:
+ * edb:
+ * Geany: 
+ * Git Cola:
+ * Git DAG:
+ * GNU Radio Companion:
+ * Meld: 
+ * SQLite database browser:
+ * VSCodium: 
+ * XRCed: 
+ * Zeal: 
  
  
  
