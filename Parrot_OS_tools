@@ -111,8 +111,8 @@ Muy útil para acceder direcamente a directorios (descargas, red, etc) y configu
  * Planner: Editor de proyectos (Gantt, etc).
 
  -3.9- Programming
- * Cutter:
- * DBeaver Community:
+ * [!] Cutter: GUI para radare2, permite muchas de las funcionalidades de r2. 
+ * [!] DBeaver Community: Administrador de BBDD universal y cliente SQL. Muy potente si tienes BBDD corriendo en tu equipo. No te permite crearlas, solo administrarlas.
  * edb:
  * Geany: 
  * Git Cola:
